@@ -90,7 +90,7 @@ namespace CityAI.AI.Core
                 return;
             }
 
-            // 设置OpenAI API的路径（复制AI_Expert的方式）
+            // 设置OpenAI API的路径
             OpenAIApi.BASE_PATH = config.serverUrl;
             OpenAIApi.USERE_PATH = config.serverUrl;
             OpenAIApi.AI_PATH = config.serverUrl;
@@ -127,7 +127,7 @@ namespace CityAI.AI.Core
 
             try
             {
-                // 使用OpenAI插件的PerLogin方法（和AI_Expert一样）
+                // 使用OpenAI插件的PerLogin方法
                 PerLoginRequest request = new PerLoginRequest();
                 request.Openid = openid;  // 注意是Openid，不是OpenID
                 request.Channel = channel;
@@ -151,7 +151,7 @@ namespace CityAI.AI.Core
                         channel = response.Data.Channel
                     };
 
-                    // 设置userkey（和AI_Expert一样）
+                    // 设置userkey
                     openai.SetConfiguration(currentUser.userkey, "");
                     
                     isLoggedIn = true;
